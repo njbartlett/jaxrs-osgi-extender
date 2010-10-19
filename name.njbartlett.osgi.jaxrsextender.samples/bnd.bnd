@@ -1,0 +1,4 @@
+-buildpath: com.sun.jersey.jersey-core
+Private-Package: org.example.jaxrs
+JAX-RS-Classes: org.example.jaxrs.HelloWorldResource
+JAX-RS-Alias: /foo

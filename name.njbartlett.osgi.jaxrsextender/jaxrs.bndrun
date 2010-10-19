@@ -1,0 +1,11 @@
+-runfw: org.apache.felix.framework
+
+-runbundles: osgi.cmpn,\
+	com.sun.jersey.jersey-core,\
+	com.sun.jersey.jersey-server,\
+	org.apache.felix.http.jetty,\
+	org.apache.felix.webconsole,\
+	org.apache.felix.log,\
+	name.njbartlett.osgi.jaxrsextender.samples;version=latest,\
+	org.apache.felix.shell,\
+	org.apache.felix.shell.tui
