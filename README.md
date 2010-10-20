@@ -6,14 +6,14 @@ This is an OSGi extender bundle that can be used to declaratively create JAX-RS 
 * Dynamically deploy and undeploy JAX-RS applications at runtime.
 * Completely declarative... just build the Resource classes and list them in the bundle manifest.
 * No OSGi or Jersey code to write... just code against the standard JAX-RS APIs/annotations.
-* Your application bundles are decoupled from OSGi and Jersey. The could be used in a non-OSGi environment or with an alternative JAX-RS implementation.
+* Your application bundles are decoupled from OSGi and Jersey. They could be used in a non-OSGi environment or with an alternative JAX-RS implementation.
 
 From an application developer's point of view, the extender is extremely simple to use. Simply build a bundle containing the Resource and Provider classes -- marked up with standard JAX-RS annotations -- and add the following two headers to the bundle manifest:
 
 	JAX-RS-Alias: /example
 	JAX-RS-Classes: org.example.HelloResource, org.example.GoodbyeResource
 
-`JAX-RS-Alias` is the URL prefix that will be used for all resource in this application. `JAX-RS-Classes` is a comma-separated list of Resource or Provider classes. N.B. these classes do not need to be exported from your bundle, and it is recommended to keep them private.
+`JAX-RS-Alias` is the URL prefix that will be used for all resource in this application. `JAX-RS-Classes` is a comma-separated list of Resource or Provider classes. *N.B.* these classes do not need to be exported from your bundle, and it is recommended to keep them private.
 
 Example
 -------
@@ -35,11 +35,15 @@ The following example was adapted from the Jersey [Getting Started](https://jers
 
 Compile this and build into a bundle using [Bnd](http://www.aQute.biz/Code/Bnd). I recommend using [Bndtools](http://njbartlett.name/bndtools_intro.html).
 
-The Bnd description should look like this:
+The Bnd descriptor should look like this:
 
 	Private-Package: org.example
 	JAX-RS-Alias: /example
 	JAX-RS-Classes: org.example.HelloWorldResource
+	
+As an alternative for maintaining the `JAX-RS-Classes` header, you can use the following Bnd macro. This will expand at build-time to the list of classes in the bundle that are annotated with `@Path`:
+
+	JAX-RS-Classes: ${classes;ANNOTATION;javax.ws.rs.Path}
 
 Deploy to an OSGi runtime containing at least the following bundles:
 
