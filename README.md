@@ -1,12 +1,12 @@
-JAX-RS Extender Bundle
-======================
+JAX-RS Extender Bundle for OSGi
+===============================
 
 This is an OSGi extender bundle that can be used to declaratively create JAX-RS applications. It has the following benefits:
 
 * Dynamically deploy and undeploy JAX-RS applications at runtime.
 * Completely declarative... just build the Resource classes and list them in the bundle manifest.
 * No OSGi or Jersey code to write... just code against the standard JAX-RS APIs/annotations.
-* Your application bundles are decoupled from OSGi and 
+* Your application bundles are decoupled from OSGi and Jersey. The could be used in a non-OSGi environment or with an alternative JAX-RS implementation.
 
 From an application developer's point of view, the extender is extremely simple to use. Simply build a bundle containing the Resource and Provider classes -- marked up with standard JAX-RS annotations -- and add the following two headers to the bundle manifest:
 
@@ -55,7 +55,7 @@ You should then be able to open the following URL and see the "Hello world!" mes
 Licence
 -------
 
-This code is distributed under the terms of the (Eclipse Public Licence version 1.0)[http://www.eclipse.org/legal/epl-v10.html].
+This code is distributed under the terms of the [Eclipse Public Licence version 1.0](http://www.eclipse.org/legal/epl-v10.html).
 
 <a href="http://flattr.com/thing/74659/JAX-RS-Extender-Bundle-for-OSGi" target="_blank">
 <img src="http://api.flattr.com/button/button-static-50x60.png" alt="Flattr this" title="Flattr this" border="0" /></a>
