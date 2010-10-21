@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="build"> 
+	<target name="build">
+		<ant dir="name.njbartlett.osgi.jaxrsextender" target="build"/>
+		<ant dir="name.njbartlett.osgi.jaxrsextender.samples" target="build"/>
+	</target>
+	<target name="clean">
+		<ant dir="name.njbartlett.osgi.jaxrsextender" target="deepclean"/>
+		<ant dir="name.njbartlett.osgi.jaxrsextender.samples" target="deepclean"/>
+	</target>
+</project>
