@@ -8,7 +8,7 @@
  * Contributors:
  *     Neil Bartlett - initial API and implementation
  ******************************************************************************/
-package org.example.jaxrs;
+package org.example.jaxrs.hello;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

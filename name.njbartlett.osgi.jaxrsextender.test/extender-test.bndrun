@@ -1,11 +1,9 @@
 -runfw: org.apache.felix.framework
 
--runbundles:\
-	osgi.cmpn,\
+-runbundles: osgi.cmpn,\
 	javax.servlet,\
 	com.sun.jersey.jersey-core,\
 	com.sun.jersey.jersey-server,\
 	org.easymock,\
 	net.sf.cglib,\
-	name.njbartlett.osgi.jaxrsextender;version=latest,\
-	name.njbartlett.osgi.jaxrsextender.samples;version=latest
+	name.njbartlett.osgi.jaxrsextender;version=latest
