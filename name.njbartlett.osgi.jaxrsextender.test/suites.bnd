@@ -1,0 +1,4 @@
+Test-Suites: name.njbartlett.osgi.jaxrsextender.test.ExtenderTest
+
+Private-Package: name.njbartlett.osgi.jaxrsextender.test
+Conditional-Package: name.njbartlett.osgi.jaxrsextender.utils

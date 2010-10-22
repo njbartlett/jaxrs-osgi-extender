@@ -1,5 +1,8 @@
 -buildpath: com.sun.jersey.jersey-core
 
+JAX-RS-Alias: /samples
+JAX-RS-Classes: ${classes;ANNOTATION;javax.ws.rs.Path}
 Private-Package: org.example.jaxrs
-JAX-RS-Alias: /foo
-JAX-RS-Classes: org.example.jaxrs.HelloWorldResource
+
+# Sample resource included for testing purposes
+Include-Resource: resources
