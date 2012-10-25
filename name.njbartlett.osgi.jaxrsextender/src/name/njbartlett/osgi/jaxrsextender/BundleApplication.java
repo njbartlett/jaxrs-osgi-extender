@@ -18,13 +18,21 @@ import org.osgi.framework.Bundle;
 
 public class BundleApplication extends Application {
 	private final Set<Class<?>> classes;
+	private final Set<Object> singletons;
 
-	public BundleApplication(Bundle bundle, Set<Class<?>> classes) {
+	public BundleApplication(Bundle bundle, Set<Class<?>> classes, Set<Object> singletons) {
 		this.classes = classes;
+		this.singletons = singletons;
 	}
 	
 	@Override
 	public Set<Class<?>> getClasses() {
 		return this.classes;
 	}
+	
+	@Override
+	public Set<Object> getSingletons() {
+		return singletons;
+	}
+	
 }
