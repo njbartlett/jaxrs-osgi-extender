@@ -14,6 +14,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import aQute.bnd.annotation.component.Component;
+
+@Component(provide=GoodbyeWorldResource.class)
 @Path("/goodbyeworld")
 public class GoodbyeWorldResource {
 	
@@ -22,4 +25,11 @@ public class GoodbyeWorldResource {
 	public String getMessage() {
 		return "Goodbye world!";
 	}
+	
+	@GET
+	@Path("/object")
+	public GoodbyeSample getSample() {
+		return new GoodbyeSample("Goodbye World from a Sample object!");
+	}
+	
 }

@@ -1,10 +1,11 @@
--buildpath:\
-	osgi.core,\
+-buildpath: osgi.core,\
 	osgi.cmpn,\
-	javax.servlet,\
-	com.sun.jersey.jersey-core,\
-	com.sun.jersey.jersey-server
+	com.sun.jersey.jersey-server;version=1.13.0,\
+	com.sun.jersey.core;version=1.13.0,\
+	com.sun.jersey.servlet;version=1.13.0,\
+	javax.servlet;version=2.5.0.v200910301333
 
 Private-Package: name.njbartlett.osgi.jaxrsextender
 Conditional-Package: name.njbartlett.osgi.utils
 Bundle-Activator: name.njbartlett.osgi.jaxrsextender.Activator
+

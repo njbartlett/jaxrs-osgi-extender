@@ -20,6 +20,13 @@ public class HelloWorldResource {
 	@GET
 	@Produces("text/plain")
 	public String getMessage() {
-		return "Hello world!";
+		return "Hello world!"; 
 	}
+	
+	@GET
+	@Path("/object")
+	public HelloSample getSample() {
+		return new HelloSample("Hello World from a Sample object!");
+	}
+	
 }

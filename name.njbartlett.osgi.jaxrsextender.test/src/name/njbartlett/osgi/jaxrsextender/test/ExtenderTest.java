@@ -1,6 +1,13 @@
 package name.njbartlett.osgi.jaxrsextender.test;
 
-import static org.easymock.EasyMock.*;
+import static org.easymock.EasyMock.anyObject;
+import static org.easymock.EasyMock.capture;
+import static org.easymock.EasyMock.createStrictMock;
+import static org.easymock.EasyMock.eq;
+import static org.easymock.EasyMock.notNull;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.reset;
+import static org.easymock.EasyMock.verify;
 
 import java.io.IOException;
 import java.net.URL;
@@ -9,7 +16,6 @@ import java.util.Dictionary;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
-import name.njbartlett.osgi.jaxrsextender.utils.BundleUtils;
 import name.njbartlett.osgi.jaxrsextender.utils.StreamUtil;
 
 import org.easymock.Capture;
@@ -20,7 +26,7 @@ import org.osgi.service.http.HttpContext;
 import org.osgi.service.http.HttpService;
 import org.osgi.service.http.NamespaceException;
 
-import bndtools.runtime.junit.OSGiTestCase;
+import aQute.junit.runtime.OSGiTestCase;
 
 public class ExtenderTest extends OSGiTestCase {
 

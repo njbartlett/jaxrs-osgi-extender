@@ -34,6 +34,8 @@ public class HttpServiceTracker extends ServiceTracker {
 		ResourceBundleTracker bundleTracker = new ResourceBundleTracker(context, httpService, log);
 		bundleTracker.open();
 		
+		context.addServiceListener(bundleTracker);
+		
 		return bundleTracker;
 	}
 	
@@ -43,6 +45,8 @@ public class HttpServiceTracker extends ServiceTracker {
 		
 		ResourceBundleTracker bundleTracker = (ResourceBundleTracker) service;
 		bundleTracker.close();
+		
+		context.removeServiceListener(bundleTracker);
 		
 		context.ungetService(reference);
 	}

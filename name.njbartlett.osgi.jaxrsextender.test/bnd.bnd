@@ -1,7 +1,8 @@
 -buildpath: osgi.core,\
 	osgi.cmpn,\
-	com.sun.jersey.jersey-core,\
+	com.sun.jersey.core,\
 	javax.servlet,\
-	bndtools.runtime.junit,\
-	org.easymock
+	org.easymock,\
+	junit.osgi,\
+	biz.aQute.junit
 -sub: *.bnd

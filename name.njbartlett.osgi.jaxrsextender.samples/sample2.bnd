@@ -1,7 +1,8 @@
 Private-Package: org.example.jaxrs.goodbye
 
-JAX-RS-Alias: /samples
-JAX-RS-Classes: ${classes;ANNOTATED;javax.ws.rs.Path}
+JAX-RS-Alias: /sample2
+# JAX-RS-Classes: ${classes;ANNOTATED;javax.ws.rs.Path}
 
 # Sample resource included for testing purposes
 Include-Resource: resources/2
+Service-Component: *

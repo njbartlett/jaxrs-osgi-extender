@@ -1,32 +1,16 @@
-# General Options
-project.dependson       = ${p-dependson;:}
-project.bootclasspath   = ${p-bootclasspath;:}
-project.buildpath       = ${p-buildpath;:}
-project.sourcepath      = ${p-sourcepath;:}
-project.allsourcepath   = ${p-allsourcepath;:}
-project.output          = ${p-output}
-project.testpath        = ${p-testpath;:}
+## Place your specific settings here.
 
--verbose:     true
-project:      ${basedir}
-src:          src
-bin:          bin
-target-dir:   generated
-target:       ${project}/${target-dir}
-build:        ${workspace}/cnf
-repo:         ${build}/repo
-p:            ${basename;${project}}
-project.name: ${p}
 
-# Java Compiler Options
-java:         java
-javac:        javac
-javac.source: 1.5
-javac.target: 1.5
-javac.debug:  on
+## Default settings are in ext/*.bnd and they will be overridden by anything
+## you specify in this file.
 
-# Bnd Options
--sources:       true
--sourcepath:    ${project}/src 
--plugin:        aQute.lib.deployer.FileRepo;location=${repo}
--versionpolicy: "[${version;==;${@}},${version;+;${@}})"
+
+## Properties from ext/*.bnd can be referenced in order to extend them.
+## For example, to add one addtional plugin to the list defined in ext/repositories.bnd:
+# -plugin: ${ext.repositories.-plugin}, org.example.MyPlugin
+
+
+## If you use git, you might want to uncomment the following lines:
+# Git-Descriptor: ${system-allow-fail;git describe --dirty --always}
+# Git-SHA: ${system-allow-fail;git rev-list -1 HEAD}
+
