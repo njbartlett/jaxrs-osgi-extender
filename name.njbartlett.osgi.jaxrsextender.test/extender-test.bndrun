@@ -14,10 +14,9 @@
 	name.njbartlett.osgi.jaxrsextender.core;version=latest,\
 	com.sun.jersey.core;version='[1.13.0,1.13.1)',\
 	osgi.cmpn;version='[4.2.0,4.2.1)'
--runrequires: osgi.identity;filter:='(osgi.identity=name.njbartlett.osgi.jaxrsextender.api)',\
-	osgi.identity;filter:='(osgi.identity=name.njbartlett.osgi.jaxrsextender.core)',\
-	osgi.identity;filter:='(osgi.identity=name.njbartlett.osgi.jaxrsextender.test.suites)',\
+-runrequires: osgi.identity;filter:='(osgi.identity=name.njbartlett.osgi.jaxrsextender.test.suites)',\
 	osgi.identity;filter:='(osgi.identity=name.njbartlett.osgi.jaxrsextender.samples.sample1)',\
 	osgi.identity;filter:='(osgi.identity=name.njbartlett.osgi.jaxrsextender.samples.sample2)',\
+	osgi.identity;filter:='(osgi.identity=name.njbartlett.osgi.jaxrsextender)',\
 	osgi.identity;filter:='(osgi.identity=biz.aQute.junit)'
 -runee: JavaSE-1.6
