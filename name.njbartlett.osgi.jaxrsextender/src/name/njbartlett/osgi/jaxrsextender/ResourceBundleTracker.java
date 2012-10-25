@@ -33,6 +33,7 @@ import org.osgi.service.http.NamespaceException;
 import org.osgi.service.log.LogService;
 import org.osgi.util.tracker.BundleTracker;
 
+import com.sun.jersey.api.container.ContainerException;
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 
 public class ResourceBundleTracker extends BundleTracker implements AllServiceListener {
@@ -85,6 +86,10 @@ public class ResourceBundleTracker extends BundleTracker implements AllServiceLi
 		} catch (NamespaceException e) {
 			log.log(LogService.LOG_ERROR, "Error registering servlet.", e);
 			return null;
+		} catch (ContainerException e) {
+			// this happens due to a bug in Jersey if the app only contains Singletons
+			log.log(LogService.LOG_WARNING, "Exception while registering servlet.", e);
+			return alias;
 		}
 	}
 
